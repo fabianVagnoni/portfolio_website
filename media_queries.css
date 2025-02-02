@@ -1,0 +1,10 @@
+/* Hides desktop nav and shows ham if small*/
+@media screen and (max-width: 1200px){
+    #desktop-nav{
+        display: none;
+    }
+    #hamburguer-menu-nav{
+        display: flex;
+    }
+}
+

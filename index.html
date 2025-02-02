@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabián Vagnoni</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media_queries.css">
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Fabián Vagnoni</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburguer-menu-nav">
+        <div class="logo">Fabián Vagnoni</div>
+        <div class="hamburguer-menu">
+            <div class="hamburguer-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Project</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+    <section id="profile">
+        <div class="section__pic-container">
+            <img src="./Assets/profile-pic-FV.png.jpg" 
+            alt="Fabián Vagnoni profile texture" class="circular-img">
+        </div>
+        <div class="section__text">
+            <p class="section__text_p1">
+                Hello I am
+            </p>
+            <h1 class="title">
+                Fabián Vagnoni
+            </h1>
+            <p class="section__text_p2">
+                Data Scientist & AI Engineer   
+            </p>
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('./Assets/Fabian_Vagnoni_CV.pdf')">
+                    Download CV
+                </button>
+                <button class="btn btn-color-1" onclick="location.href='./#contact'">
+                    Contact Info.
+                </button>
+            </div>
+            <div id="social-container">
+                <img src="./Assets/linkedin.png" alt="Mt LinkedIn"
+                class="icon" onclick="location.href='https://www.linkedin.com/in/fabian-vagnoni-1b1077224/'">
+                <img src="./Assets/github.png" alt="Mt Github"
+                class="icon" onclick="location.href='https://github.com/fabianVagnoni'">
+            </div>
+        </div>
+    </section>
+    <script src="scripts.js"></script>
+</body>
+</html>
