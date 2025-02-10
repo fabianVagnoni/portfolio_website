@@ -131,4 +131,9 @@
         padding: 0;
         align-items: center;
     }
+
+    .opt-img-2{
+        height: 3rem;
+        width: 4.5rem;
+    }
 }

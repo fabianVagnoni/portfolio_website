@@ -303,7 +303,10 @@ section {
 }
 
 .about-pic {
+    margin-top: 7.5rem;
     border-radius: 2rem;
+    height: 184px;
+    width: 360px;
 }
 
 .arrow {
@@ -421,6 +424,12 @@ article .icon {
 .project-description{
     text-align: center;
     margin-bottom: 1rem;
+}
+
+.opt-img-2{
+    height: 8rem;
+    width: 12rem;
+    margin-bottom: 0.6rem;
 }
 
 
