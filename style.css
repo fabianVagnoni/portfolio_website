@@ -336,6 +336,11 @@ section {
     margin: auto 0;
 }
 
+.section__about__text {
+    align-self: center;
+    text-align: justify;
+}
+
 
 /* EXPERIENCE SECTION */
 
