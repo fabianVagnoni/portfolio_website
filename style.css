@@ -438,6 +438,14 @@ article .icon {
     margin-bottom: 0.6rem;
 }
 
+.project-video {
+    border-radius: 2rem;
+    width: 70%;
+    height: auto;
+    margin: 1rem auto;
+    display: block;
+}
+
 
 /* CONTACT SECTION */
 
