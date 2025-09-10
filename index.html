@@ -300,55 +300,67 @@
         <div class="experience-details-container">
             <div class="about-container">
                 <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./Assets/Story_Twist.jpg"
-                        alt="Project 1" class="project-img">
+                    <div class="project-media-container">
+                        <div class="media-display">
+                            <img src="./Assets/Story_Twist.jpg"
+                            alt="Project 1" class="project-media active" data-media-type="image">
+                        </div>
                     </div>
-                    <h2 class="project-title">
-                        Story Twist
-                    </h2>
-                    <h3 class="project-subtitle">
-                        Backend Dev. | Pricing Model
-                    </h3>
-                    <p class="section__text__p1 project-description">
-                        A storytelling app for personalized & interactive tales.
-                    </p>
-                    <div class="button-container">
-                        <button class="btn btn-color-2 project-btn"
-                        onclick="location.href='https://github.com/fabianVagnoni/StoryAppTypeScript'">
-                            Repo
-                        </button>
-                        <button class="btn btn-color-1 project-btn"
-                        onclick="location.href='https://apps.apple.com/es/app/storytwist/id6689522572'">
-                            AppStore
-                        </button>
+                    <div class="project-content">
+                        <h2 class="project-title">
+                            Story Twist
+                        </h2>
+                        <h3 class="project-subtitle">
+                            Backend Dev. | Pricing Model
+                        </h3>
+                        <p class="section__text__p1 project-description">
+                            A storytelling app for personalized & interactive tales.
+                        </p>
+                        <div class="button-container">
+                            <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/fabianVagnoni/StoryAppTypeScript'">
+                                Repo
+                            </button>
+                            <button class="btn btn-color-1 project-btn"
+                            onclick="location.href='https://apps.apple.com/es/app/storytwist/id6689522572'">
+                                AppStore
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="details-container color-container">
-                    <div class="article-container">
-                        <video class="project-video" controls>
-                            <source src="./Assets/parrowl_recording_2.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <video class="project-video" controls>
-                            <source src="./Assets/parrowl_recording.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                    <div class="project-media-container">
+                        <div class="media-display">
+                            <video class="project-media active" controls data-media-type="video">
+                                <source src="./Assets/parrowl_recording_2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <video class="project-media" controls data-media-type="video" style="display: none;">
+                                <source src="./Assets/parrowl_recording.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="media-menu">
+                            <button class="media-btn active" data-media-index="0">Demo 1</button>
+                            <button class="media-btn" data-media-index="1">Demo 2</button>
+                        </div>
                     </div>
-                    <h2 class="project-title">
-                        Parrowl
-                    </h2>
-                    <h3 class="project-subtitle">
-                        Full Stack Development
-                    </h3>
-                    <p class="section__text__p1 project-description">
-                        AI Agent for language learning.
-                    </p>
-                    <div class="button-container">
-                        <button class="btn btn-color-2 project-btn"
-                        onclick="location.href='https://parrowl.netlify.app'">
-                            Website
-                        </button>
+                    <div class="project-content">
+                        <h2 class="project-title">
+                            Parrowl
+                        </h2>
+                        <h3 class="project-subtitle">
+                            Full Stack Development
+                        </h3>
+                        <p class="section__text__p1 project-description">
+                            AI Agent for language learning.
+                        </p>
+                        <div class="button-container">
+                            <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://parrowl.netlify.app'">
+                                Website
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

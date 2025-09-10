@@ -6,16 +6,42 @@ function toggleMenu() {
     icon.classList.toggle('open');
 }
 
-// Modal functionality for project images and videos
+// Modal functionality and multimedia navigation
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
     const modalVideo = document.getElementById('modalVideo');
     const closeBtn = document.querySelector('.modal-close');
     
-    // Get all project images and videos
-    const projectImages = document.querySelectorAll('.project-img');
-    const projectVideos = document.querySelectorAll('.project-video');
+    // Get all project media elements
+    const projectMedia = document.querySelectorAll('.project-media');
+    
+    // Handle multimedia menu navigation
+    const mediaMenus = document.querySelectorAll('.media-menu');
+    mediaMenus.forEach(menu => {
+        const mediaContainer = menu.parentElement;
+        const mediaButtons = menu.querySelectorAll('.media-btn');
+        const mediaElements = mediaContainer.querySelectorAll('.project-media');
+        
+        mediaButtons.forEach((button, index) => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons and media
+                mediaButtons.forEach(btn => btn.classList.remove('active'));
+                mediaElements.forEach(media => {
+                    media.classList.remove('active');
+                    media.style.display = 'none';
+                    if (media.tagName.toLowerCase() === 'video') {
+                        media.pause();
+                    }
+                });
+                
+                // Add active class to clicked button and corresponding media
+                button.classList.add('active');
+                mediaElements[index].classList.add('active');
+                mediaElements[index].style.display = 'block';
+            });
+        });
+    });
     
     // Function to open modal with image
     function openImageModal(src, alt) {
@@ -46,19 +72,16 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = 'auto'; // Restore scrolling
     }
     
-    // Add click event listeners to project images
-    projectImages.forEach(function(img) {
-        img.addEventListener('click', function() {
-            openImageModal(this.src, this.alt);
-        });
-    });
-    
-    // Add click event listeners to project videos
-    projectVideos.forEach(function(video) {
-        video.addEventListener('click', function() {
-            const source = video.querySelector('source');
-            if (source) {
-                openVideoModal(source.src);
+    // Add click event listeners to project media
+    projectMedia.forEach(function(media) {
+        media.addEventListener('click', function() {
+            if (media.tagName.toLowerCase() === 'img') {
+                openImageModal(media.src, media.alt);
+            } else if (media.tagName.toLowerCase() === 'video') {
+                const source = media.querySelector('source');
+                if (source) {
+                    openVideoModal(source.src);
+                }
             }
         });
     });
