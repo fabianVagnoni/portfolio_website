@@ -396,6 +396,18 @@
             Copyrighth &#169 2025 Fabián Vagnoni. All rights reserved.
         </p>
     </footer>
+    
+    <!-- Modal for expanded images/videos -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <img id="modalImage" style="display: none;">
+            <video id="modalVideo" style="display: none;" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    
     <script src="scripts.js"></script>
     <script>
         (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="K4HXDYaYX4LC3WXLHm8Ml";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
