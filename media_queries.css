@@ -73,6 +73,30 @@
         min-height: 400px;
         padding: 1rem;
     }
+    
+    /* Carousel responsive styles */
+    .projects-carousel-container {
+        margin: 1rem 0;
+        padding: 0 50px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .carousel-btn-prev {
+        left: 5px;
+    }
+    
+    .carousel-btn-next {
+        right: 5px;
+    }
+    
+    .project-slide {
+        padding: 0 0.5rem;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -169,5 +193,39 @@
     .media-btn {
         padding: 0.3rem 0.6rem;
         font-size: 0.7rem;
+    }
+    
+    /* Mobile carousel styles */
+    .projects-carousel-container {
+        margin: 0.5rem 0;
+        padding: 0 45px;
+    }
+    
+    .project-slide {
+        flex: 0 0 100%;
+        padding: 0 0.25rem;
+    }
+    
+    .projects-carousel {
+        width: 300%; /* 3 slides × 100% each = 300% on mobile */
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .carousel-btn-prev {
+        left: 2px;
+    }
+    
+    .carousel-btn-next {
+        right: 2px;
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
     }
 }

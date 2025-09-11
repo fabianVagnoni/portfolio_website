@@ -103,3 +103,106 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Carousel functionality
+let currentSlide = 0;
+
+function getCarouselSettings() {
+    const isMobile = window.innerWidth <= 600;
+    return {
+        slideWidth: isMobile ? 100 : 50, // 100% width on mobile, 50% on desktop
+        totalSlides: isMobile ? 3 : 2,   // 3 slides on mobile, 2 positions on desktop
+        projectsPerView: isMobile ? 1 : 2
+    };
+}
+
+function moveCarousel(direction) {
+    const carousel = document.querySelector('.projects-carousel');
+    const settings = getCarouselSettings();
+    
+    currentSlide += direction;
+    
+    // Handle boundaries
+    if (currentSlide < 0) {
+        currentSlide = settings.totalSlides - 1;
+    } else if (currentSlide >= settings.totalSlides) {
+        currentSlide = 0;
+    }
+    
+    // Apply transform
+    // On desktop: slideWidth is 50% (one project width)
+    // On mobile: slideWidth is 100% (one project width)
+    const translateX = -currentSlide * settings.slideWidth;
+    carousel.style.transform = `translateX(${translateX}%)`;
+    
+    // Update indicators
+    updateIndicators();
+}
+
+function goToSlide(slideIndex) {
+    const settings = getCarouselSettings();
+    if (slideIndex >= 0 && slideIndex < settings.totalSlides) {
+        currentSlide = slideIndex;
+        const carousel = document.querySelector('.projects-carousel');
+        const translateX = -currentSlide * settings.slideWidth;
+        carousel.style.transform = `translateX(${translateX}%)`;
+        updateIndicators();
+    }
+}
+
+function updateIndicators() {
+    const indicators = document.querySelectorAll('.indicator');
+    const settings = getCarouselSettings();
+    
+    indicators.forEach((indicator, index) => {
+        if (settings.totalSlides === 3) {
+            // Mobile: show all 3 indicators
+            indicator.style.display = 'block';
+            indicator.classList.toggle('active', index === currentSlide);
+        } else {
+            // Desktop: show only 2 indicators
+            if (index < 2) {
+                indicator.style.display = 'block';
+                indicator.classList.toggle('active', index === currentSlide);
+            } else {
+                indicator.style.display = 'none';
+            }
+        }
+    });
+}
+
+function initializeCarousel() {
+    const settings = getCarouselSettings();
+    currentSlide = Math.min(currentSlide, settings.totalSlides - 1);
+    const carousel = document.querySelector('.projects-carousel');
+    const translateX = -currentSlide * settings.slideWidth;
+    carousel.style.transform = `translateX(${translateX}%)`;
+    updateIndicators();
+}
+
+// Auto-play carousel (optional - uncomment if desired)
+/*
+setInterval(() => {
+    moveCarousel(1);
+}, 5000); // Move every 5 seconds
+*/
+
+// Handle keyboard navigation for carousel
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft') {
+        moveCarousel(-1);
+    } else if (e.key === 'ArrowRight') {
+        moveCarousel(1);
+    }
+});
+
+// Handle window resize
+window.addEventListener('resize', function() {
+    initializeCarousel();
+});
+
+// Initialize carousel on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Small delay to ensure all elements are loaded
+    setTimeout(initializeCarousel, 100);
+});
