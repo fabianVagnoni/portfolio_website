@@ -284,12 +284,20 @@ section {
 
 #about {
  position: relative;
+ height: auto;
+ min-height: fit-content;
+ padding-bottom: 2rem;
 }
 
 .about-container {
-    gap: 2rem;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
+    gap: 3rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .about-details-container {
@@ -316,13 +324,28 @@ section {
 }
 
 .details-container {
-    padding: .5rem;
+    padding: 1.5rem;
     flex: 1;
     background: white;
     border-radius: 2rem;
     border: rgb(53, 53, 53) 0.1rem solid;
     border-color: rgb(163, 163, 163);
     text-align: center;
+    max-width: 300px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Reset for project containers to avoid conflicts */
+#about .details-container {
+    min-height: 120px;
+    padding: 1.5rem;
+    flex: 1;
+    max-width: none;
+    width: 100%;
 }
 
 /* Project-specific styling */
@@ -334,9 +357,15 @@ section {
 }
 
 .section-container {
-    gap: 4rem;
-    height: 80%;
+    gap: 2rem;
+    height: auto;
     width: 100%;
+}
+
+/* About section specific container styling */
+#about .section-container {
+    justify-content: center;
+    align-items: center;
 }
 
 .section__pic-container {

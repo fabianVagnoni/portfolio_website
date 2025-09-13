@@ -43,6 +43,16 @@
     .about-containers {
         margin-top: 0;
     }
+    
+    .about-container {
+        gap: 1.5rem;
+        flex-direction: column;
+    }
+    
+    #about .details-container {
+        max-width: 100%;
+        width: 100%;
+    }
     .circular-img{
         width: 175px; 
         height: 175px; 
@@ -100,7 +110,7 @@
 }
 
 @media screen and (max-width: 600px){
-    #contact, #footer {
+    #contact, footer {
         height: 40vh;
     }
 
@@ -164,7 +174,17 @@
 
     .details-container {
         margin: 0rem;
-        padding: 0.35rem;
+        padding: 1rem;
+    }
+    
+    .about-container {
+        gap: 1rem;
+        flex-direction: column;
+    }
+    
+    #about .details-container {
+        min-height: 100px;
+        padding: 1rem;
     }
 
     .experience-details-container {
