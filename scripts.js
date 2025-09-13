@@ -109,10 +109,13 @@ let currentSlide = 0;
 
 function getCarouselSettings() {
     const isMobile = window.innerWidth <= 600;
+    const totalProjects = document.querySelectorAll('.project-slide').length;
+    
     return {
         slideWidth: isMobile ? 100 : 50, // 100% width on mobile, 50% on desktop
-        totalSlides: isMobile ? 3 : 2,   // 3 slides on mobile, 2 positions on desktop
-        projectsPerView: isMobile ? 1 : 2
+        totalSlides: isMobile ? totalProjects : Math.max(1, totalProjects - 1), // On mobile: all projects, on desktop: positions to show all
+        projectsPerView: isMobile ? 1 : 2,
+        totalProjects: totalProjects
     };
 }
 
@@ -153,15 +156,20 @@ function goToSlide(slideIndex) {
 function updateIndicators() {
     const indicators = document.querySelectorAll('.indicator');
     const settings = getCarouselSettings();
+    const isMobile = window.innerWidth <= 600;
     
     indicators.forEach((indicator, index) => {
-        if (settings.totalSlides === 3) {
-            // Mobile: show all 3 indicators
-            indicator.style.display = 'block';
-            indicator.classList.toggle('active', index === currentSlide);
+        if (isMobile) {
+            // Mobile: show indicators for all projects
+            if (index < settings.totalProjects) {
+                indicator.style.display = 'block';
+                indicator.classList.toggle('active', index === currentSlide);
+            } else {
+                indicator.style.display = 'none';
+            }
         } else {
-            // Desktop: show only 2 indicators
-            if (index < 2) {
+            // Desktop: show indicators for carousel positions
+            if (index < settings.totalSlides) {
                 indicator.style.display = 'block';
                 indicator.classList.toggle('active', index === currentSlide);
             } else {

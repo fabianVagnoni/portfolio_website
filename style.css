@@ -324,6 +324,18 @@ section {
 }
 
 .details-container {
+    padding: .5rem;
+    flex: 1;
+    background: white;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* About Me specific container styling */
+.about-details-container {
     padding: 1.5rem;
     flex: 1;
     background: white;
@@ -339,8 +351,7 @@ section {
     align-items: center;
 }
 
-/* Reset for project containers to avoid conflicts */
-#about .details-container {
+#about .about-details-container {
     min-height: 120px;
     padding: 1.5rem;
     flex: 1;
@@ -397,7 +408,6 @@ section {
     display: flex;
     justify-content: center;
     flex-direction: column;
-
 }
 
 .experience-details-container:nth-of-type(2) {
@@ -450,7 +460,7 @@ article .icon {
 .projects-carousel {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 150%; /* 3 slides × 50% each = 150% */
+    width: 200%; /* 4 slides × 50% each = 200% */
     max-width: none;
 }
 
