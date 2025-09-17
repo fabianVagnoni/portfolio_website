@@ -80,7 +80,7 @@
     }
     
     #projects .details-container {
-        min-height: 400px;
+        height: 400px;
         padding: 1rem;
     }
     
@@ -206,7 +206,7 @@
     }
     
     #projects .details-container {
-        min-height: 350px;
+        height: 350px;
         padding: 0.75rem;
     }
     
