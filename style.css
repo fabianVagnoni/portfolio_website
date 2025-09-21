@@ -364,7 +364,9 @@ section {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    height: 500px;
+    justify-content: space-between;
+    min-height: 500px;
+    height: auto;
 }
 
 .section-container {
@@ -750,4 +752,13 @@ footer p {
 /* Additional button styling for projects */
 .button-container {
     margin-top: auto;
+}
+
+/* Ensure consistent project container heights */
+.projects-carousel {
+    align-items: stretch;
+}
+
+.project-slide {
+    display: flex;
 }

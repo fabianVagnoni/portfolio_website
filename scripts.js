@@ -207,10 +207,39 @@ document.addEventListener('keydown', function(e) {
 // Handle window resize
 window.addEventListener('resize', function() {
     initializeCarousel();
+    // Small delay to ensure layout changes are complete
+    setTimeout(equalizeProjectHeights, 100);
 });
+
+// Function to equalize project container heights
+function equalizeProjectHeights() {
+    const projectContainers = document.querySelectorAll('#projects .details-container');
+    
+    // Reset heights first
+    projectContainers.forEach(container => {
+        container.style.height = 'auto';
+    });
+    
+    // Get the maximum height
+    let maxHeight = 0;
+    projectContainers.forEach(container => {
+        const height = container.offsetHeight;
+        if (height > maxHeight) {
+            maxHeight = height;
+        }
+    });
+    
+    // Apply the maximum height to all containers
+    projectContainers.forEach(container => {
+        container.style.height = maxHeight + 'px';
+    });
+}
 
 // Initialize carousel on page load
 document.addEventListener('DOMContentLoaded', function() {
     // Small delay to ensure all elements are loaded
-    setTimeout(initializeCarousel, 100);
+    setTimeout(() => {
+        initializeCarousel();
+        equalizeProjectHeights();
+    }, 100);
 });
