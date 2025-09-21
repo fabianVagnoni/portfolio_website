@@ -749,6 +749,37 @@ footer p {
     color: #ccc;
 }
 
+/* Technology stack bubbles/tags */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    justify-content: center;
+}
+
+.tech-tag {
+    background: rgb(250, 250, 250);
+    color: rgb(85, 85, 85);
+    padding: 0.4rem 0.8rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    border: 1px solid rgb(163, 163, 163);
+    transition: all 0.3s ease;
+    box-shadow: none;
+}
+
+.tech-tag:hover {
+    background: rgb(53, 53, 53);
+    color: white;
+    border-color: rgb(53, 53, 53);
+    transform: none;
+    box-shadow: none;
+}
+
 /* Additional button styling for projects */
 .button-container {
     margin-top: auto;

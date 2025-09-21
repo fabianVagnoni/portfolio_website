@@ -220,19 +220,22 @@ function equalizeProjectHeights() {
         container.style.height = 'auto';
     });
     
-    // Get the maximum height
-    let maxHeight = 0;
-    projectContainers.forEach(container => {
-        const height = container.offsetHeight;
-        if (height > maxHeight) {
-            maxHeight = height;
-        }
-    });
-    
-    // Apply the maximum height to all containers
-    projectContainers.forEach(container => {
-        container.style.height = maxHeight + 'px';
-    });
+    // Small delay to ensure tech stack elements are fully rendered
+    setTimeout(() => {
+        // Get the maximum height
+        let maxHeight = 0;
+        projectContainers.forEach(container => {
+            const height = container.offsetHeight;
+            if (height > maxHeight) {
+                maxHeight = height;
+            }
+        });
+        
+        // Apply the maximum height to all containers
+        projectContainers.forEach(container => {
+            container.style.height = maxHeight + 'px';
+        });
+    }, 50);
 }
 
 // Initialize carousel on page load
